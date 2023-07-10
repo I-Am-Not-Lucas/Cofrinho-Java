@@ -1,0 +1,66 @@
+		
+		
+		while(escolha != 0) {
+			System.out.println("Escolha uma opcao\n");
+			
+			System.out.println("[1] Adicionar Moeda\n"
+					+ "[2] Remover Moeda\n"
+					+ "[3] Listar Moeda\n"
+					+ "[4] Calcular total convertido para real\n"
+					+ "[0] Encerrar");	
+		
+			
+
+			
+		escolha = new Scanner(System.in).nextInt();
+		
+		if(escolha == 1) {
+		
+			System.out.println("[1] Dolar\n"
+					+ "[2] Real\n"
+					+ "[3] Euro\n");
+			int opcao;
+			double valor;
+			
+			opcao = new Scanner(System.in).nextInt();
+			
+			
+			
+			//System.out.println("opcao: " + opcao + " " + "valor: " + valor);
+			
+			if(opcao == 1) {
+
+				System.out.println("Digite quantos dolares");
+				valor = new Scanner(System.in).nextDouble();
+				listaMoeda.add(new Dolar(valor));
+				System.out.println(listaMoeda.get(0).valor);
+			}
+			else if(opcao == 2) {
+				
+				System.out.println("Digite quantos reais");
+				valor = new Scanner(System.in).nextDouble();
+				listaMoeda.add(new Real(valor));
+				System.out.println(listaMoeda.get(0).valor);
+				}
+			else if(opcao == 3) {
+				
+				System.out.println("Digite quantos Euros");
+				valor = new Scanner(System.in).nextDouble();
+				listaMoeda.add(new Euro(valor));
+				System.out.println(listaMoeda.get(0).valor);
+				}
+			
+			
+			else {
+				System.out.println("");
+			}
+			
+		  }
+		
+		else if(escolha == 2) {
+			
+		}
+		
+		
+
+		}
