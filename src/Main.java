@@ -52,13 +52,35 @@ public class Main {
 				
 				break;
 			case 2:
-				System.out.println(escolha);
+				System.out.println("Escolha moeda");
+				System.out.println("[1] Euro");
+				System.out.println("[2] Dolar");
+				System.out.println("[3] Real");
+				
+				Scanner scanner2 = new Scanner(System.in);
+				int qualMoeda2 = scanner2.nextInt();
+				
+				
+				System.out.println("Digite o valor: ");
+				double valor2 = scanner2.nextDouble();
+				
+				if(qualMoeda2 == 1) {
+					cofrinho.remover(new Euro(valor2));
+				}else if(qualMoeda2 == 2) {
+					cofrinho.remover(new Dolar(valor2));
+				}else if(qualMoeda2 == 3) {
+					cofrinho.remover(new Real(valor2));
+				}
+				else {
+					System.out.println("Algo deu errado");
+				}
 				break;
 			case 3:
 				cofrinho.listagemMoedas();
 				break;
 			case 4:
-				System.out.println(escolha);
+				double totalConvertido = cofrinho.totalConvertido();
+				System.out.println("total: " + totalConvertido + " reais.");
 				break;
 			default:
 				System.out.println("Algo deu errado");

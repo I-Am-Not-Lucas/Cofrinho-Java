@@ -12,12 +12,13 @@ public class Cofrinho {
 	public void adicionar(Moeda moedaNova) {
 		this.listaMoedas.add(moedaNova);
 		System.out.println("Moeda adicionada");
+		System.out.println("");
 		
 	}
 	
-	public void remover(Moeda moeda) {
-		System.out.println();
+	public void remover(Moeda moedaTirar) {
 		
+		this.listaMoedas.remove(moedaTirar);
 	}
 	
 	public void listagemMoedas() {
@@ -31,6 +32,23 @@ public class Cofrinho {
 				moeda.info();
 			}
 		}
+	}
+	
+	public double totalConvertido() {
+		if(this.listaMoedas.isEmpty()) {
+			return 0;
+		}else {
+			// acumulador que ira receber um valor adicional em cada loop
+			double acumulador = 0;
+			for(Moeda moeda: this.listaMoedas) {
+				acumulador = acumulador + moeda.converter();
+								
+			}
+			return acumulador;
+			
+			
+		}
+		
 	}
 	
 }
